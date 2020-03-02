@@ -1,0 +1,38 @@
+@each $theme-name, $theme-color in $theme {
+  .text-#{$theme-name} {
+    color: $theme-color !important;
+  }
+
+  .bg-#{$theme-name} {
+    background-color: $theme-color !important;
+  }
+}
+
+
+.text-light-red {
+  color: $light-red !important;
+}
+
+.text-cyan-light  {
+  color: $cyan-light !important;
+}
+
+.bg-white_f7 {
+  background-color: $white_f7;
+}
+
+.bg-blue {
+  background-color: $blue;
+}
+
+.bg-dark-info {
+  background-color: $dark-cyan !important;
+}
+
+.text-dark-info {
+  color: $dark-cyan !important;
+}
+
+.text-light-info {
+  color: $cyan-light !important;
+}

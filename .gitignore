@@ -1,0 +1,12 @@
+.idea
+node_modules
+.git
+
+dist/css/*.css
+dist/css/*.css.*
+dist/js/index.js
+
+
+
+
+

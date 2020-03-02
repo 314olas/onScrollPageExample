@@ -1,0 +1,49 @@
+.container {
+  margin: 0 map_get($grid-xs, 'grid-margins');
+
+  @media (min-width: map_get($grid-breakpoints, 'md')) {
+    margin: 0 map_get($grid-md, 'grid-margins');
+  }
+
+  @media (min-width: map_get($grid-breakpoints, 'xl')) {
+    max-width: 1202px;
+    margin: 0 auto;
+  }
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -(map_get($grid-xs, 'gutter-width') / 2);
+  margin-left: -(map_get($grid-xs, 'gutter-width') / 2);
+
+  @media (min-width: map_get($grid-breakpoints, 'xl')) {
+    margin-right: -(map_get($grid-xl, 'gutter-width') / 2);
+    margin-left: -(map_get($grid-xl, 'gutter-width') / 2);
+  }
+}
+
+@for $i from 1 through $grid-columns {
+  .col-#{$i} {
+    max-width: 100% /  $grid-columns * $i;
+    width: 100% /  $grid-columns * $i;
+    flex: 0 0 100% /  $grid-columns * $i;
+    padding: 0 (map_get($grid-xs, 'gutter-width') / 2);
+
+    @media (min-width: map_get($grid-breakpoints, 'xl')) {
+      padding: 0 (map_get($grid-xl, 'gutter-width') / 2);
+    }
+  }
+}
+
+@each $item, $breakpoint in $grid-breakpoints {
+  @media all and (min-width: $breakpoint) {
+    @for $i from 1 through $grid-columns {
+      .col-#{$item}-#{$i} {
+        max-width: 100% / $grid-columns * $i;
+        width: 100% / $grid-columns * $i;
+        flex: 0 0 100% / $grid-columns * $i;
+      }
+    }
+  }
+}

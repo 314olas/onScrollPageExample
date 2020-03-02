@@ -1,0 +1,39 @@
+/*
+  Heading styles
+ */
+$h1-font-size: 60px;
+$h2-font-size: 50px;
+$h3-font-size: 40px;
+$h4-font-size: 30px;
+$h5-font-size: 22px;
+$h6-font-size: 18px;
+
+h1, h5, h6, h2, h3, h4 {
+  font-family: $font-family-base;
+  color: $dark-blue;
+}
+
+
+h1, .h1 {
+  font-size: $h1-font-size;
+}
+
+h2, .h2 {
+  font-size: $h2-font-size;
+}
+
+h3, .h3 {
+  font-size: $h3-font-size;
+}
+
+h4, .h4 {
+  font-size: $h4-font-size;
+}
+
+h5, .h5 {
+  font-size: $h5-font-size;
+}
+
+h6, .h6 {
+  font-size: $h6-font-size;
+}

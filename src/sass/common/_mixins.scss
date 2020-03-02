@@ -1,0 +1,22 @@
+@mixin media-breakpoint-up($name) {
+  @if map_has_key($grid-breakpoints, $name) {
+    @media (min-width: map_get($grid-breakpoints, $name)) {
+      @content;
+    }
+  } @else {
+    @media (min-width: $name) {
+      @content;
+    }
+  }
+}
+
+/* Single property transition mixin */
+
+$animation-speed: .3s;
+
+@mixin multi-transition($transition, $properties-list...) {
+  transition-duration: $transition;
+  transition-property: $properties-list;
+}
+
+

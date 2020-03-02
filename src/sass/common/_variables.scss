@@ -1,0 +1,74 @@
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  mdl: 1024px,
+  lg: 1112px,
+  xl: 1366px
+);
+
+$grid-columns: 12;
+
+$grid-xs: (
+  gutter-width: 14px,
+  grid-margins: 16px
+);
+
+$grid-md: (
+  gutter-width: 15px,
+  grid-margins: 37px
+);
+
+
+$grid-xl: (
+  gutter-width: 22px,
+  grid-margins: 82px
+);
+
+$header-height: (
+  xs: 80px,
+  md: 100px
+);
+
+/* Font styles */
+$font-family-sans-serif:  sans-serif;
+$font-family-serif: serif;
+$font-family-base: $font-family-sans-serif;
+$font-family-secondary: $font-family-serif;
+
+$black: #000;
+$white: #fff;
+$white_f7: #f7f7f7;
+$gray: #707070;
+$blue: #004691;
+$dark-blue: #001c36;
+$light-red: #D91F54;
+$red: #E50051;
+$dark-red: #7E0A52;
+$darker-red: #631147;
+$cyan-light: #73C1AC;
+$cyan: #81C8BA;
+$dark-cyan:  #009193;
+$darker-cyan: #008F98;
+
+$base-font-size: 16px;
+
+$btn-color: #001537;
+$navigation-bg: $dark-cyan;
+
+
+$primary: $dark-blue;
+$danger: $red;
+$info: $darker-cyan;
+$secondary: $dark-red;
+
+$theme: (
+  "primary": $primary,
+  "secondary": $secondary,
+  "info": $info,
+  "dark": $secondary,
+  "danger": $danger,
+  "white": $white,
+  "cyan": $cyan
+);
+

@@ -1,0 +1,276 @@
+header {
+  position: fixed;
+  width: 100%;
+  background-color: $white;
+  z-index: 150;
+
+}
+
+.scrolled-page {
+
+  header {
+    box-shadow: 0 3px 12px rgba($black, .12);
+  }
+
+
+  &.open-navigation {
+    .secondary-nav-wrap {
+      z-index: 149;
+    }
+  }
+}
+
+.main-nav-btn-holder {
+  position: fixed;
+  right: 16px;
+  top: map_get($header-height, 'xs') / 2;
+  transform: translateY(-50%);
+  z-index: 165;
+
+  @include media-breakpoint-up(md) {
+    top: map_get($header-height, 'md') / 2;
+    right: 38px;
+  }
+
+  @include media-breakpoint-up(xl) {
+    right: 82px;
+  }
+}
+
+.main-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 19px 0 18px;
+
+
+  @include media-breakpoint-up(md) {
+    position: relative;
+    justify-content: center;
+    padding: 24px 0 24px;
+  }
+}
+
+.logo {
+  height: 43px;
+  display: block;
+
+  img {
+    max-height: 100%;
+    height: 100%;
+    width: auto;
+  }
+
+  @include media-breakpoint-up(md) {
+    height: 52px;
+  }
+}
+
+.navigation {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-color: $navigation-bg;
+  transform: translateX(100%);
+  transition: transform .3s, background-color .3s;
+  padding-right: 42px;
+  padding-top: 40px;
+  padding-left:  map_get($grid-xs, 'grid-margins');
+  overflow-x: hidden;
+  overflow-y: auto;
+  z-index: 155;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  @include media-breakpoint-up(md) {
+    width: auto;
+    min-width: 436px;
+    padding-left: 60px;
+  }
+
+  @include media-breakpoint-up(xl) {
+    min-width: 683px;
+    padding-left: 80px;
+  }
+}
+
+.open-navigation {
+  overflow-y: hidden;
+
+  .navigation {
+    transform: translateX(0);
+
+  }
+
+  .navigation-list-item.shown {
+    //animation: .5s ease-in-out  forwards navigation-links_open;
+    transform: translateX(0);
+  }
+
+  .btn-menu {
+    color: $white;
+
+
+    .open-text {
+      position: static;
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .close-text {
+      position: absolute;
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+
+
+  .menu-icon {
+    &:after,
+    &:before {
+      background-color: $white;
+    }
+
+    &:after {
+      transform: rotate(45deg) translateX(-5px);
+    }
+
+    &:before {
+      transform: rotate(-45deg) translateX(-6px);
+    }
+  }
+}
+
+.navigation-btn-holder {
+  text-align: right;
+  margin-bottom: 76px;
+}
+
+.navigation-list {
+  font-size: 40px;
+  font-weight: bold;
+
+  .navigation-list-item {
+    position: relative;
+    padding: 2px 0;
+    transform: translateX(-100%);
+    transition: transform .3s ease-out;
+  }
+}
+
+.navigation-link {
+  color: rgba($white, .5);
+  display: block;
+  transition: color .3s;
+
+  &:hover {
+    color: $white;
+  }
+}
+
+.navigation-sub_back {
+  position: absolute;
+  top: -54px;
+  left: 0;
+  width: auto;
+  transform: translateX(-150%);
+  transition: transform .3s ease-out;
+  color: $white;
+  font-size: 20px;
+
+  .icon {
+    margin-right: 22px;
+  }
+}
+
+.menu-icon {
+  display: inline-block;
+  width: 22px;
+  height: 10px;
+  position: relative;
+  margin-left: 14px;
+
+  &:after,
+  &:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    height: 2px;
+    width: 100%;
+    background-color: $btn-color;
+    transition: background-color .3s, transform .3s;
+  }
+
+  &:before {
+    top: 0;
+  }
+
+  &:after {
+    bottom: 0;
+  }
+}
+
+.btn-menu {
+  border: 0;
+  background-color: transparent;
+  padding: 0;
+  font-size: $base-font-size;
+  transition: color .3s;
+
+  .open-text {
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+    transition: visibility .3s, opacity .3s;
+  }
+
+  .close-text {
+    transition: visibility .3s, opacity .3s;
+  }
+}
+
+.navigation-link_dropdown {
+  background-color: transparent;
+  border: 0;
+  font-size: 40px;
+  font-weight: bold;
+  color: rgba($white, .5);
+  padding: 0;
+}
+
+.navigation-link_dropdown-slide {
+  position: absolute;
+  font-size: 40px;
+  font-weight: bold;
+  color: rgba($white, .5);
+  padding-top: 8px;
+
+  li {
+    padding: 4px 0;
+    transform: translateX(-450%);
+    transition: transform .3s ease-out;
+
+    &.open-sub {
+      transform: translateX(0);
+    }
+  }
+
+  a {
+    transition: color .3s;
+
+    &:hover {
+      color: $white;
+    }
+  }
+}
+
+.open-sub {
+
+  .navigation-sub_back {
+    transform: translateX(0);
+  }
+
+}
