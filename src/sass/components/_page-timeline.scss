@@ -128,13 +128,15 @@ $header-md-height: 100px;
 }
 
 .timeline-section_large {
-  height: calc(100vh - #{$header-xs-height});
-  padding-top: 170px;
-  padding-bottom: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: calc(100vh - #{map_get($header-height, 'xs')});
   transition: opacity .1s;
 
   @include media-breakpoint-up(md) {
-    height: calc(100vh - #{$header-md-height});
+    height: calc(100vh - #{map_get($header-height, 'md')});
   }
 
   &.fixed {

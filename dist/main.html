@@ -14,33 +14,34 @@
   <header id="header">
     <div class="container">
       <div class="main-nav">
-        <a href="#" class="logo"></a>
+        <a href="#" class="logo" tabindex="1"><img src="images/headerLogo.png" alt="lifestyle outlet logo"></a>
         <div class="main-nav-btn-holder navigation-opener-holder">
           <button type="button" class="btn-menu" id="btnMenuOpen">
             <b class="close-text">Menu</b>
-            <b class="open-text">Close</b>
+            <b class="open-text text-white">Close</b>
             <span class="menu-icon"></span>
           </button>
         </div>
       </div>
     </div>
-    <div class="navigation">
+    <nav class="navigation" tabindex="0">
       <ul class="navigation-list" id="navAccordion">
         <li class="navigation-list-item"><a href="/" class="navigation-link">Home</a></li>
         <li class="navigation-list-item"><a href="#" class="navigation-link">About Us</a></li>
         <li class="navigation-list-item navigation-list-item_dropdown">
-          <button class="btn-link navigation-sub_back"><i class="icon icon-Arrow-Icon"></i>Back to menu</button>
-          <button type="button" class="navigation-link navigation-link_dropdown">Dropdown</button>
+
+          <button type="button" class="navigation-link navigation-link_dropdown" role="dropdown">Dropdown</button>
           <ul class="navigation-link_dropdown-slide">
+            <li><button type="button" class="btn-link navigation-sub_back"><i class="icon icon-Arrow-Icon"></i>Back to menu</button></li>
             <li><a href="#">Lorem</a></li>
             <li><a href="#">Lorem</a></li>
             <li><a href="#">Lorem</a></li>
           </ul>
         </li>
         <li class="navigation-list-item navigation-list-item_dropdown">
-          <button class="btn-link navigation-sub_back"><i class="icon icon-Arrow-Icon"></i>Back to menu</button>
           <button type="button" class="navigation-link navigation-link_dropdown">Dropdown</button>
           <ul class="navigation-link_dropdown-slide">
+            <li><button type="button" class="btn-link navigation-sub_back"><i class="icon icon-Arrow-Icon"></i>Back to menu</button></li>
             <li><a href="/">Lorem</a></li>
             <li><a href="#">Lorem</a></li>
             <li><a href="#">Lorem</a></li>
@@ -50,14 +51,11 @@
           </ul>
         </li>
         <li class="navigation-list-item"><a href="#" class="navigation-link">Lorem</a></li>
-        <li class="navigation-list-item"><a href="#" class="navigation-link">Loreme</a></li>
+        <li class="navigation-list-item"><a href="#" class="navigation-link">Lorem</a></li>
         <li class="navigation-list-item"><a href="#" class="navigation-link">Lorem</a></li>
         <li class="navigation-list-item"><a href="#" class="navigation-link">Lorem</a></li>
       </ul>
-    </div>
-    <div class="sub-navigation" id="destinationSub">
-
-    </div>
+    </nav>
   </header>
 
   <main class="page-timeline-main">

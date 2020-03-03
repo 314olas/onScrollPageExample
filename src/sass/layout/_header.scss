@@ -45,9 +45,8 @@ header {
 
 
   @include media-breakpoint-up(md) {
-    position: relative;
     justify-content: center;
-    padding: 24px 0 24px;
+    padding: 24px 0;
   }
 }
 
@@ -75,9 +74,9 @@ header {
   background-color: $navigation-bg;
   transform: translateX(100%);
   transition: transform .3s, background-color .3s;
-  padding-right: 42px;
+  padding-right: 20px;
   padding-top: 40px;
-  padding-left:  map_get($grid-xs, 'grid-margins');
+  padding-left: map_get($grid-xs, 'grid-margins');
   overflow-x: hidden;
   overflow-y: auto;
   z-index: 155;
@@ -89,6 +88,7 @@ header {
     width: auto;
     min-width: 436px;
     padding-left: 60px;
+    padding-right: 40px;
   }
 
   @include media-breakpoint-up(xl) {
@@ -99,15 +99,33 @@ header {
 
 .open-navigation {
   overflow-y: hidden;
+  #wrapper {
+    height: 100vh;
+    position: relative;
+  }
 
   .navigation {
     transform: translateX(0);
 
   }
 
-  .navigation-list-item.shown {
-    //animation: .5s ease-in-out  forwards navigation-links_open;
-    transform: translateX(0);
+  .navigation-list-item {
+    max-height: 200px;
+
+    &.shown {
+      transform: translateX(0);
+    }
+
+    &.notActive {
+      max-height: 0;
+      padding: 0;
+
+      .navigation-link_dropdown {
+        max-height: 0;
+        opacity: 0;
+        visibility: hidden;
+      }
+    }
   }
 
   .btn-menu {
@@ -154,10 +172,15 @@ header {
   font-weight: bold;
 
   .navigation-list-item {
-    position: relative;
-    padding: 2px 0;
-    transform: translateX(-100%);
+    padding: 5px 0;
+    transform: translateX(-125%);
     transition: transform .3s ease-out;
+    //transition-property: transform;
+
+
+
+    &_dropdown {
+    }
   }
 }
 
@@ -172,14 +195,11 @@ header {
 }
 
 .navigation-sub_back {
-  position: absolute;
-  top: -54px;
-  left: 0;
   width: auto;
-  transform: translateX(-150%);
   transition: transform .3s ease-out;
   color: $white;
   font-size: 20px;
+  margin-bottom: 20px;
 
   .icon {
     margin-right: 22px;
@@ -239,6 +259,8 @@ header {
   font-weight: bold;
   color: rgba($white, .5);
   padding: 0;
+  width: 100%;
+  text-align: left;
 }
 
 .navigation-link_dropdown-slide {
@@ -246,20 +268,23 @@ header {
   font-size: 40px;
   font-weight: bold;
   color: rgba($white, .5);
-  padding-top: 8px;
+  width: 100%;
 
   li {
     padding: 4px 0;
-    transform: translateX(-450%);
+    transform: translateX(-125%);
     transition: transform .3s ease-out;
 
-    &.open-sub {
-      transform: translateX(0);
+    &.sm-item {
+      font-size: 25px;
+      padding: 13px 0;
     }
+
   }
 
   a {
     transition: color .3s;
+    display: block;
 
     &:hover {
       color: $white;
@@ -269,8 +294,8 @@ header {
 
 .open-sub {
 
-  .navigation-sub_back {
-    transform: translateX(0);
+  .navigation-link_dropdown-slide li {
+    transform: translateX(125%);
   }
 
 }
